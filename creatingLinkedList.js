@@ -39,11 +39,29 @@ class LinkedList {
     }
     return arr;
   }
+
+    insert(index, value){
+    const newNode = new Node( value );
+    let curr = this.head;
+    for( let i = 0; i !== index-1; i++ )
+    {
+      if( curr.next !== null)
+        curr = curr.next;
+    }
+    newNode.next = curr.next;
+    newNode.prev = curr;
+    if( curr.next !== null )
+      curr.next.prev = newNode;
+    curr.next = newNode;
+    this.length++;
+    return this.printList();
+  }
 }
 
 let myLinkedList = new LinkedList(10);
 myLinkedList.append(5);
 myLinkedList.append(16);
 myLinkedList.prepend(1);
-//console.log( myLinkedList );
-myLinkedList.printLinkedList();
+myLinkedList.insert(2, 99)
+myLinkedList.insert(19, 88)
+myLinkedList.insert(300,3);
