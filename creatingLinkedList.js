@@ -61,6 +61,7 @@ class LinkedList {
       if( this.head.next === null )
         return this.head;
       let first = this.head;
+      this.tail = this.head;
       let second = this.head.next;
       while( second )
       {
