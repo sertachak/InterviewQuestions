@@ -54,7 +54,7 @@ class LinkedList {
       curr.next.prev = newNode;
     curr.next = newNode;
     this.length++;
-    return this.printList();
+    return this.printLinkedList();
   }
 }
 
