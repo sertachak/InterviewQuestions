@@ -40,7 +40,7 @@ class LinkedList {
     return arr;
   }
 
-    insert(index, value){
+  insert(index, value){
     const newNode = new Node( value );
     let curr = this.head;
     for( let i = 0; i !== index-1; i++ )
@@ -57,7 +57,7 @@ class LinkedList {
     return this.printLinkedList();
   }
 
-    reverse() {
+  reverse() {
       if( this.head.next === null )
         return this.head;
       let first = this.head;
