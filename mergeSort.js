@@ -1,6 +1,6 @@
 const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
 
-function mergeSort (array) {
+mergeSort = (array) => {
   if (array.length === 1) {
     console.log("end")
     return array
@@ -17,7 +17,7 @@ function mergeSort (array) {
   )
 }
 
-function merge(left, right){
+merge = (left, right) => {
   let merged = [];
   console.log( "mergeLeft" +left )
   console.log( "mergeRight" + right)
