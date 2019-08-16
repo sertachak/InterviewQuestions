@@ -45,7 +45,7 @@ class BinarySearchTree {
     }
   }
 
-    lookup(value){
+  lookup(value){
     if (!this.root) {
       return false;
     }
@@ -62,7 +62,7 @@ class BinarySearchTree {
     return null
   }
 
-    remove(value) {
+  remove(value) {
     if (!this.root) {
       return false;
     }
