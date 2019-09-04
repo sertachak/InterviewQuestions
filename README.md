@@ -29,3 +29,9 @@ https://www.toptal.com/developers/sorting-algorithms
 
 # Example Questions
 https://www.hackerrank.com/ 
+
+# Design Patterns
+
+Adapter
+
+https://sourcemaking.com/design_patterns/adapter
