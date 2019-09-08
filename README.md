@@ -35,3 +35,7 @@ https://www.hackerrank.com/
 Adapter
 
 https://sourcemaking.com/design_patterns/adapter
+
+Bridge
+
+https://sourcemaking.com/design_patterns/bridge
