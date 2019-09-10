@@ -39,3 +39,5 @@ https://sourcemaking.com/design_patterns/adapter
 Bridge
 
 https://sourcemaking.com/design_patterns/bridge
+
+https://www.javatpoint.com/abstract-class-in-java
