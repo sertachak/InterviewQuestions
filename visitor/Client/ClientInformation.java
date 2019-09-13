@@ -9,6 +9,6 @@ class ClientInformation implements Client{
     }
 
     public int check( LoanAccount loanAccount ){
-        return loadAccount.getLoan();
+        return loanAccount.getLoan();
     }
 }

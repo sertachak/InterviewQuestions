@@ -15,7 +15,7 @@ class LoanAccount implements Account{
         this.id = id;
     }
 
-    public int getLoad(){
+    public int getLoan(){
         return 80000;
     }
 
