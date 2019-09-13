@@ -41,3 +41,7 @@ Bridge
 https://sourcemaking.com/design_patterns/bridge
 
 https://www.javatpoint.com/abstract-class-in-java
+
+Proxy
+
+https://sourcemaking.com/design_patterns/proxy
