@@ -1,0 +1,12 @@
+package data;
+
+public enum MessageStatus{
+
+	REGULAR,
+	GETTING_TYPE,
+	GATHERING_FROM_IP,
+	TRANSFERED_TO_IP,
+	GETTING_LENGTH,
+	UPDATING_IPS,
+	GETTING_DATA,
+}
