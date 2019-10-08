@@ -11,3 +11,5 @@ https://www.cis.upenn.edu/~bcpierce/courses/629/jdkdocs/api/java.net.InetAddress
 https://docs.oracle.com/javase/7/docs/api/java/net/InetAddress.html
 
 https://stackoverflow.com/questions/3345857/how-to-get-a-list-of-ip-connected-in-same-network-subnet-using-java
+
+https://www.w3schools.com/java/java_hashmap.asp
