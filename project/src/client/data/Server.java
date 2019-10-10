@@ -81,5 +81,15 @@ private static final SERVER_NAME = '';
 		return activeConnections;
 	}
 
+	public void sendCommands(){
+		Set<TargetConnections> activeConnections = activeConnections();
+		for( TargetConnections tc : activeConnections ){
+			//Should have send commands to active targetConnections TODO.
+		}
+	}
 
+	public void getMessage( String s ){
+		clientMessages.add(s);
+		//If full should catch exeption
+	}
 }
