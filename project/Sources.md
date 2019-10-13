@@ -13,3 +13,11 @@ https://docs.oracle.com/javase/7/docs/api/java/net/InetAddress.html
 https://stackoverflow.com/questions/3345857/how-to-get-a-list-of-ip-connected-in-same-network-subnet-using-java
 
 https://www.w3schools.com/java/java_hashmap.asp
+
+#Installing pycrypto
+
+sudo apt-get install python-dev
+
+pip install pycrypto
+
+pip show pycrypto // to see info As of pip 1.3, there is a pip show command. In older versions, pip freeze and grep should do the job nicely.
