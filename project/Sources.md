@@ -21,3 +21,5 @@ sudo apt-get install python-dev
 pip install pycrypto
 
 pip show pycrypto // to see info As of pip 1.3, there is a pip show command. In older versions, pip freeze and grep should do the job nicely.
+
+https://www.geeksforgeeks.org/java-swing-jpanel-examples/
