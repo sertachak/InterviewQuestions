@@ -1,3 +1,9 @@
 #Links
 
 https://medium.com/@RaghavPrabhu/understanding-of-convolutional-neural-network-cnn-deep-learning-99760835f148
+
+https://www.rcharlie.com/post/fitter-happier/
+
+http://millionsongdataset.com/pages/getting-dataset/
+
+https://aws.amazon.com/tr/datasets/million-song-dataset/
