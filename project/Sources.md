@@ -23,3 +23,9 @@ pip install pycrypto
 pip show pycrypto // to see info As of pip 1.3, there is a pip show command. In older versions, pip freeze and grep should do the job nicely.
 
 https://www.geeksforgeeks.org/java-swing-jpanel-examples/
+
+https://docs.oracle.com/javase/tutorial/networking/sockets/definition.html
+
+https://coderanch.com/t/207309/java/ServerSocket-port-number-Socket-port
+
+https://stackoverflow.com/questions/12418501/server-client-connection-in-java
