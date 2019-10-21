@@ -29,3 +29,7 @@ https://docs.oracle.com/javase/tutorial/networking/sockets/definition.html
 https://coderanch.com/t/207309/java/ServerSocket-port-number-Socket-port
 
 https://stackoverflow.com/questions/12418501/server-client-connection-in-java
+
+https://www.journaldev.com/741/java-socket-programming-server-client
+
+https://www.geeksforgeeks.org/multithreading-in-java/
