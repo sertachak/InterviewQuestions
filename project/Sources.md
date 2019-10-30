@@ -37,3 +37,5 @@ https://www.geeksforgeeks.org/multithreading-in-java/
 https://www.geeksforgeeks.org/understanding-static-in-public-static-void-main-in-java/
 
 https://www.geeksforgeeks.org/networking-class-in-java/
+
+https://resources.infosecinstitute.com/antivirus-evasion-tools/#gref
