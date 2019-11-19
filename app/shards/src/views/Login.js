@@ -38,17 +38,18 @@ export default function Login(props) {
           sm="4"
           title="Login & Create List For Spotify"
           subtitle="Login"
-          className="text-sm-left"
+          className="text-center"
+          md={{ span: 6, offset: 4 }}
         />
       </Row>
 
       <Row>
-        <Col lg="8" className="mb-4">
-          <Card small className="mb-4">
+        <Col md={{ span: 6, offset: 3 }} lg="5" className="mb-4">
+          <Card small className="text-center">
             <CardHeader className="border-bottom">
               <h6 className="m-0">Username/Email & Password</h6>
             </CardHeader>
-              <ListGroup flush>
+              <ListGroup flush className="FormItems">
                <ListGroupItem className="p-3">
                 <Row>
                   <FormValidation />

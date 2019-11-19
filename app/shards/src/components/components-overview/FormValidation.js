@@ -24,7 +24,7 @@ const FormValidation = ( props ) => {
     return re.test(String(email).toLowerCase());
 }
   
-  return (<Col sm="12" md="6">
+  return (<Col sm="12" md="20">
     <strong className="text-muted d-block mb-2">Credential Check</strong>
     <Form>
       <Row form>
