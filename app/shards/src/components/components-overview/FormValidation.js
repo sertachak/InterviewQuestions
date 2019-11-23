@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
 import {
   Row,
   Col,
@@ -17,6 +19,10 @@ const FormValidation = ( props ) => {
 
   function validateForm() {
     return validateEmail(email) && password.length > 0;
+  }
+
+  const isItAValidAccount = () => {
+    return "blog-overview";
   }
 
   function validateEmail(email) {
@@ -51,7 +57,7 @@ const FormValidation = ( props ) => {
         <FormFeedback>The username is taken.</FormFeedback>
       </FormGroup>
     
-      <Button block bsSize="large" disabled={ !validateForm() } type="submit">
+      <Button block bsSize="large" disabled={ !validateForm() } type="submit" tag={Link} to={isItAValidAccount()}  >
           Login
       </Button>
     </Form>
