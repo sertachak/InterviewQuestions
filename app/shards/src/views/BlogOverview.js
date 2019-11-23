@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Container, Row, Col } from "shards-react";
+import * as $ from "jquery";
 
 import PageTitle from "./../components/common/PageTitle";
 import SmallStats from "./../components/common/SmallStats";
@@ -10,7 +11,62 @@ import NewDraft from "./../components/blog/NewDraft";
 import Discussions from "./../components/blog/Discussions";
 import TopReferrals from "./../components/common/TopReferrals";
 
-const BlogOverview = ({ smallStats }) => (
+const BlogOverview = ({ smallStats }) => {
+
+  let first = 0;
+  const  [token, setToken] = useState("");
+  const  [successData, setState] = useState({
+    name:"",
+    popularity: ""
+  })
+
+  const componentDidMount = () => {
+    // Set token
+    let _token = hash.access_token;
+    if (_token) {
+      // Set token
+     setToken(_token);
+    }
+  }
+
+  const hash = window.location.hash
+  .substring(1)
+  .split("&")
+  .reduce(function(initial, item) {
+    if (item) {
+      var parts = item.split("=");
+      initial[parts[0]] = decodeURIComponent(parts[1]);
+    }
+    return initial;
+  }, {});
+
+  const getData = (token) => {
+    // Make a call using the token
+    console.log("1");
+    $.ajax({
+      url: "https://api.spotify.com/v1/me/top/artists",
+      type: "GET",
+      beforeSend: (xhr) => {
+        xhr.setRequestHeader("Authorization", "Bearer " + token);
+      },
+      success: (data) => {
+        setState({
+          ...successData,
+          [data.items.name ] : data.items.popularity
+        });
+      }
+    });
+  }
+  if( first < 1 ){
+    componentDidMount();
+    window.location.hash = "";
+    //getData(token);
+    first++;
+    console.log(2)
+  }
+
+return(
+
   <Container fluid className="main-content-container px-4">
     {/* Page Header */}
     <Row noGutters className="page-header py-4">
@@ -64,6 +120,7 @@ const BlogOverview = ({ smallStats }) => (
     </Row>
   </Container>
 );
+}
 
 BlogOverview.propTypes = {
   /**

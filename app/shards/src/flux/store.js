@@ -8,7 +8,8 @@ import getLoginItems from "../data/login-nav-items";
 let _store = {
   menuVisible: false,
   navItems: getSidebarNavItems(),
-  loginItems: getLoginItems()
+  loginItems: getLoginItems(),
+  token: ""
 };
 
 class Store extends EventEmitter {
@@ -26,6 +27,8 @@ class Store extends EventEmitter {
       case Constants.TOGGLE_SIDEBAR:
         this.toggleSidebar();
         break;
+      case Constants.SET_TOKEN:
+        _store.token = payload;
       default:
     }
   }

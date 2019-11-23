@@ -12,10 +12,49 @@ import {
   Button
 } from "shards-react";
 
+export const authEndpoint = 'https://accounts.spotify.com/authorize';
+
 const FormValidation = ( props ) => {
   
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const  [token, setToken] = useState("");
+
+  const clientId = "6462e55abfd5435ba392959529e6c1a7";
+  const redirectUri = "http:%2F%2Flocalhost:3000%2Fblog-overview%2F";
+  const scopes = [
+    "playlist-read-private",
+    "playlist-modify-private",
+    "playlist-read-collaborative",
+    "playlist-modify-public",
+    "user-library-read",
+    "user-library-modify",
+    "user-top-read",
+    "user-read-recently-played"
+  ];
+
+  const componentDidMount = () => {
+    // Set token
+    let _token = hash.access_token;
+    if (_token) {
+      // Set token
+     setToken(_token);
+    }
+  }
+
+  const hash = window.location.hash
+  .substring(1)
+  .split("&")
+  .reduce(function(initial, item) {
+    if (item) {
+      var parts = item.split("=");
+      initial[parts[0]] = decodeURIComponent(parts[1]);
+    }
+    return initial;
+  }, {});
+
+  componentDidMount();
+  window.location.hash = "";
 
   function validateForm() {
     return validateEmail(email) && password.length > 0;
@@ -33,33 +72,15 @@ const FormValidation = ( props ) => {
   return (<Col sm="12" md="20">
     <strong className="text-muted d-block mb-2">Credential Check</strong>
     <Form>
-      <Row form>
-        <Col md="12" className="form-group">
-          <FormInput
-            type = 'email'
-            placeholder="Please Enter Your Email"
-            required
-            value = { email }
-            valid ={ validateEmail(email) }
-            onChange={e => setEmail(e.target.value)}
-          />
-          <FormFeedback valid ={ validateEmail(email) }>The first name looks good!</FormFeedback>
-        </Col>
-      </Row>
       
-      <FormGroup>
-        <FormInput placeholder="Password"
-         type = 'password'
-         required 
-         value = { password }
-         onChange={e => setPassword(e.target.value)}
-        />
-        <FormFeedback>The username is taken.</FormFeedback>
-      </FormGroup>
-    
-      <Button block bsSize="large" disabled={ !validateForm() } type="submit" tag={Link} to={isItAValidAccount()}  >
+      { !token &&
+      <Button block bsSize="large" disabled={ validateForm() } type="submit"  href={`${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join("%20")}&response_type=token&show_dialog=true`}  >
           Login
       </Button>
+      }
+      {
+        token
+      }
     </Form>
   </Col>
 )};
