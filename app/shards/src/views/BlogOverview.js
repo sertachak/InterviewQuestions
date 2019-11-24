@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Container, Row, Col } from "shards-react";
-import * as $ from "jquery";
+import axios from "axios";
 
 import PageTitle from "./../components/common/PageTitle";
 import SmallStats from "./../components/common/SmallStats";
@@ -19,6 +19,8 @@ const BlogOverview = ({ smallStats }) => {
     name:"",
     popularity: ""
   })
+  const [currentData, setCurrentData] = useState({});
+
 
   const componentDidMount = () => {
     // Set token
@@ -41,29 +43,40 @@ const BlogOverview = ({ smallStats }) => {
   }, {});
 
   const getData = (token) => {
-    // Make a call using the token
-    console.log("1");
-    $.ajax({
-      url: "https://api.spotify.com/v1/me/top/artists",
-      type: "GET",
-      beforeSend: (xhr) => {
-        xhr.setRequestHeader("Authorization", "Bearer " + token);
-      },
-      success: (data) => {
-        setState({
-          ...successData,
-          [data.items.name ] : data.items.popularity
-        });
-      }
+    console.log(token);
+    axios.interceptors.request.use(function (config) {
+      // Do something before request is sent
+      
+      config.headers["Authorization"] = `Bearer ${token}`;
+      console.log(config)
+      return config;
+    }, function (error) {
+      // Do something with request error
+      return Promise.reject(error);
     });
+    axios.get("https://api.spotify.com/v1/me/playlists")
+          .then( (data) => {
+            console.log(data);
+          //setState({
+          //...successData,
+          //[data.data.items.name ] : data.data.items.popularity
+        //});
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+    console.log(successData);
   }
-  if( first < 1 ){
+
     componentDidMount();
     window.location.hash = "";
-    //getData(token);
-    first++;
+    console.log(`TOken before ${token}`)
+    useEffect( () => {
+      getData( token);
+    })
+    
     console.log(2)
-  }
+  
 
 return(
 
