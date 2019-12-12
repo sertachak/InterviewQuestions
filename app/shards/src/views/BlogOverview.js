@@ -11,6 +11,15 @@ import NewDraft from "./../components/blog/NewDraft";
 import Discussions from "./../components/blog/Discussions";
 import TopReferrals from "./../components/common/TopReferrals";
 
+const fs = require('fs') 
+
+fs.writeFile("/../../Playlist-generator-master/test", "Hey there!", function(err) {
+  if(err) {
+      return console.log(err);
+  }
+  console.log("The file was saved!");
+});
+
 const BlogOverview = ({ smallStats }) => {
 
   let first = 0;
