@@ -54,7 +54,7 @@ def goSuccess():
 
 @app.route('/topTurkey')
 def get_Top():
-   return getTopTracksByCountry("Turkey", 5, "top turkey")
+   return getTopTracksByCountry("Turkey", 5, "top500 turkey")
     
 
 @app.route('/getSimilar/<artist>_<track>_<count>_<name>')
@@ -528,6 +528,14 @@ def generatePlaylist(track_IDs, playlistName):
         print("Token")
         print(token)
         if token:
+            x = token.split("%3F")
+            print("fffffffffffffffffffffffffffffffffffffffffffffffffffffff")
+            print()
+            username = x[0]
+            token = x[1]
+            print(x)
+            print()
+            print()
             sp = spotipy.Spotify(auth=token)
             sp.trace = False
             playlist = sp.user_playlist_create(username, playlistName)

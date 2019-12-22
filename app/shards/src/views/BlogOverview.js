@@ -58,9 +58,10 @@ const BlogOverview = ({ smallStats }) => {
       // Do something with request error
       return Promise.reject(error);
     });
-    axios.get("https://api.spotify.com/v1/me/playlists")
+    axios.get("https://api.spotify.com/v1/me/")
           .then( (data) => {
-            console.log(data);
+              first = data.data.display_name;
+              window.location.href = `http://localhost:5000/callback?${data.data.display_name}?${token}`;
           //setState({
           //...successData,
           //[data.data.items.name ] : data.data.items.popularity
@@ -80,7 +81,6 @@ const BlogOverview = ({ smallStats }) => {
     })
     
     console.log(2)
-  window.location.href = `http://localhost:5000/callback?${token}`;
 
 return(
   <Col sm="12" md="20">
