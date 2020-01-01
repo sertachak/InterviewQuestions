@@ -102,12 +102,15 @@ const MakeSimilar = ({ smallStats }) => {
   })
 
   var topArtistList = JSON.parse(window.localStorage.getItem("artistList"));
-  console.log(topArtistList)
+  var profilePic = JSON.parse(window.localStorage.getItem("profilePic"));
+  console.log("PIC")
+  console.log(profilePic)
 
   console.log(2)
   let urlkey = `http://localhost:5000/create?${usernameToken}?${token}`
   return (
     <div className="MakeSimilar">
+        <img class="user-avatar rounded-circle mr-2" src={profilePic} alt="User Avatar"/>
         <h3 className="HeaderMain">Create Playlist</h3>
         <div className="selection column side">
           <h4>Create your playlist based on: </h4>
