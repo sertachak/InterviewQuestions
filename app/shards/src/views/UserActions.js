@@ -42,12 +42,14 @@ export default class UserActions extends React.Component {
     signout(){
         const url = 'https://accounts.spotify.com/en/logout/'                                                                                                                                                                                                                                                                               
         const spotifyLogoutWindow = window.open(url, 'Spotify Logout', 'width=700,height=500,top=40,left=40')
-        setTimeout(() => spotifyLogoutWindow.close(), 100)
+        setTimeout(() => spotifyLogoutWindow.close(), 900)
         window.localStorage.clear();     
         this.profilePic = ""
-        this.userName = ""                                                                                   
+        this.userName = ""
         this.componentDidMount( this.profilePic, this.userName);
-        window.location.href = `http://localhost:3000`;
+        setTimeout(function(){
+            window.location.href = `http://localhost:3000`;
+        }, 2000);                                                                               
     }
 
     validateLogin() {
