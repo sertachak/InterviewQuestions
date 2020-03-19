@@ -20,8 +20,8 @@ const Chat = ({ location }) => {
         setName(name);
         setRoom(room);
 
-        socket.emit('join', {name, room}, ({error}) => {
-            alert(error);
+        console.log("Inside Chat before emit 1111 Name: ", name, "  Room: ", room )
+        socket.emit('join', {name, room}, () => {
         });
 
         return () =>{
@@ -37,6 +37,7 @@ const Chat = ({ location }) => {
     })
 
     const sendMessage = (eventInput) => {
+        eventInput.preventDefault();
         if(message)
             socket.emit('sendMessage', message, () => setMessage('') );
     }
@@ -46,8 +47,10 @@ const Chat = ({ location }) => {
     return( 
         <div>
             <div>
-                <input value={message} onChange={(event) => setMessage(event.target.value)}
-                onKeyPress={(event) => { return event.key === 'Enter' ? sendMessage() : null }}
+                <input 
+                value={message} 
+                onChange={(event) => setMessage(event.target.value)}
+                onKeyPress={(event) => { return event.key === 'Enter' ? sendMessage(event) : null }}
                 />
             </div>
         </div>
