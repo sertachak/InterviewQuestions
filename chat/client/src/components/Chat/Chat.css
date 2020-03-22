@@ -1,6 +1,6 @@
 .mainContainer{
     display:flex;
-    align-items:center;
+    margin-top: 15%;
     justify-content:center;
     height: 100%;
     width: 100%
@@ -11,10 +11,17 @@
 .headerBar {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     background: #2979FF;
-    border-radius: 4px 4px 0 0;
-    height: 20%;
+    border-radius:25px 25px 0px 0px;
+    height: 6%;
     width: 80%;
-    border-radius:15px 0px 15px 0px;
   }
+
+  .leftInnferContainerHeaderBar{
+      display: flex;
+      align-items: center;
+      color: whitesmoke;
+      margin-left: 2%;
+  }
+  
