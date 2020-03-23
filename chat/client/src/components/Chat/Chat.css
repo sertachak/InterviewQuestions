@@ -1,27 +1,18 @@
 .mainContainer{
     display:flex;
-    margin-top: 15%;
     justify-content:center;
+    align-items: center;
     height: 100%;
     width: 100%
 
 }
 
-
-.headerBar {
-    display: flex;
-    align-items: center;
+.textContainer{
+    display:flex;
+    flex-direction: column;
     justify-content: space-between;
-    background: #2979FF;
-    border-radius:25px 25px 0px 0px;
-    height: 6%;
+    height: 60%;
     width: 80%;
-  }
-
-  .leftInnferContainerHeaderBar{
-      display: flex;
-      align-items: center;
-      color: whitesmoke;
-      margin-left: 2%;
-  }
-  
+    background-color: gray;
+    border-radius:25px 25px 10px 10px;
+}

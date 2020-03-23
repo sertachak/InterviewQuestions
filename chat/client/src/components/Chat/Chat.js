@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import queryString from 'query-string';
 import io from 'socket.io-client';
 
-import serverSpinner from '../../icons/serverSpinner.png'
 import './Chat.css';
+import HeaderBar from '../Header/HeaderBar';
+import TextInputBar from '../TextInputBar/TextInputBar';
 
 let socket;
 
@@ -48,16 +49,11 @@ const Chat = ({ location }) => {
 
     return( 
         <div className="mainContainer">
-            <div className="headerBar">
-                <div className= "leftInnferContainerHeaderBar">
-                <i className="fa fa-spinner fa-pulse fa-2x fa-fw" src={serverSpinner}></i> {/*fa fa-spinner fa-spin fa-3x fa-fw*/}
-                </div>
-                {/*<input 
-                value={message} 
-                onChange={(event) => setMessage(event.target.value)}
-                onKeyPress={(event) => { return event.key === 'Enter' ? sendMessage(event) : null }}
-                />*/}
+            <div className="textContainer">
+                <HeaderBar room={room}/>
+                  
             </div>
+            <TextInputBar message={message} setMessage={setMessage} sendMessage={sendMessage}/>    
         </div>
    )
 }
