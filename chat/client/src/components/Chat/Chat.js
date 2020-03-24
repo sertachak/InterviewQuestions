@@ -5,6 +5,7 @@ import io from 'socket.io-client';
 import './Chat.css';
 import HeaderBar from '../Header/HeaderBar';
 import TextInputBar from '../TextInputBar/TextInputBar';
+import MessageList from '../MessageList/MessageList'
 
 let socket;
 
@@ -51,9 +52,9 @@ const Chat = ({ location }) => {
         <div className="mainContainer">
             <div className="textContainer">
                 <HeaderBar room={room}/>
-                  
+                <MessageList messages={messages} name={name}/>
             </div>
-            <TextInputBar message={message} setMessage={setMessage} sendMessage={sendMessage}/>    
+            <TextInputBar id={1} label="Field label" predicted="Hi" locked={false} active={false} message={message} setMessage={setMessage} sendMessage={sendMessage}/>    
         </div>
    )
 }

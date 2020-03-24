@@ -8,9 +8,6 @@ class Input extends React.Component {
     super(props);
 
     this.state = {
-      message:props.message,
-      setMessage:props.setMessage,
-      sendMessage:props.sendMessage,  
       active: (props.locked && props.active) || false,
       value: props.value || "",
       error: props.error || "",
@@ -37,21 +34,28 @@ class Input extends React.Component {
 
     return (
       <div className={fieldClassName}>
-       <form className={fieldClassName}>
-                <input
-                    placeholder="Type a message to send..."
+       <form >
+                <input style={{width:"94.9%"}}
+                    placeholder={label}
                     type="text"
-                    value={this.state.message}
-                    onChange={(event) => this.state.setMessage(event.target.value)}
-                    onKeyPress={(event) => { return event.key === 'Enter' ? this.state.sendMessage(event) : null }}
-                    onFocus={() => this.setState({active:true})}
-                    onBlur={() => this.state.setState({active:true})}
+                    value={this.props.message}
+                    onChange={(event) =>{
+                    this.props.setMessage(event.target.value);
+                    this.changeValue.bind(this)} 
+                    }
+                    onKeyPress={(event) => { 
+                    this.handleKeyPress.bind(this);
+                    return event.key === 'Enter' ? this.props.sendMessage(event) : null 
+                    }}
+                    onFocus={() =>  this.setState({ active: true })}
+                    onBlur={() =>  this.setState({ active: false })}
                 />
-                <button onClick={(event) => this.state.sendMessage(event)}>Send</button>
+                <button className="myButton" onClick={(event) =>{
+                  this.props.sendMessage(event)
+                  this.props.setMessage("")
+                }}>Send</button>
             </form>
-        <label htmlFor={1} className={error && "error"}>
-          {error || label}
-        </label>
+           
       </div>
     );
   }

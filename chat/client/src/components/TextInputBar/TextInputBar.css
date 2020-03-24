@@ -3,12 +3,14 @@
   }
   
   body {
-    background: #673ab7;
-    background: linear-gradient(to right, #512da8, #673ab7);
+    /*background: #673ab7;/* 673ab7
+    background: linear-gradient(to bottom right, black, grey);*/
+    background: rgb(32,0,36);
+background: linear-gradient(83deg, rgba(32,0,36,1) 0%, rgba(164,78,177,0.9307073171065301) 34%, rgba(0,198,255,1) 100%);
   }
   
   .field {
-    width: 100%;
+    width: 80%;
     height: 56px;
     border-radius: 4px;
     position: relative;
@@ -104,3 +106,29 @@
     pointer-events: none;
   }
   
+  .myButton {
+    box-shadow: 2px 17px 10px -7px #361957;
+    background:linear-gradient(to bottom, #673ab7 5%, #6324ab 100%);
+    background-color:#673ab7;
+    border-radius:4px;
+    border:1px solid #673ab7;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:19px 12px;
+    text-decoration:none;
+    text-shadow:2px 2px 1px #5b8a3c;
+  }
+  .myButton:hover {
+    background:linear-gradient(to bottom, #361957 5%, #77b55a 100%);
+    background-color:#361957;
+  }
+  .myButton:active {
+    position:relative;
+    top:1px;
+  }
+  
+          

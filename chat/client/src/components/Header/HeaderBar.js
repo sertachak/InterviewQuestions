@@ -13,11 +13,6 @@ const HeaderBar = ( {room} ) =>{
     <div  className="rightInnerContainerHeaderBar">
         <a href="/"style={{color: "whitesmoke"}}><i className="fa fa-times-circle" ></i></a>
     </div>
-    {/*<input 
-    value={message} 
-    onChange={(event) => setMessage(event.target.value)}
-    onKeyPress={(event) => { return event.key === 'Enter' ? sendMessage(event) : null }}
-    />*/}
 </div>
     )}
 
